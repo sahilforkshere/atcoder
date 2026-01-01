@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly Pet Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div id="blocklyDiv"></div>
+
+        <div class="sidebar">
+            <h2>Pet Console</h2>
+            <div class="controls">
+                <button id="runBtn" class="btn run">Run Code</button>
+                <button id="clearBtn" class="btn clear">Clear</button>
+            </div>
+            
+            <h3>Generated JavaScript</h3>
+            <pre id="codePreview"><code>// Code will appear here...</code></pre>
+            
+            <h3>Live Results</h3>
+            <div id="outputDisplay">Pet status: Waiting for commands...</div>
+        </div>
+    </div>
+
+    <xml id="toolbox" style="display: none">
+        <category name="Pet Actions" colour="#5b67a5">
+            <block type="pet_start"></block>
+            <block type="pet_feed"></block>
+            <block type="pet_play"></block>
+            <block type="pet_sleep"></block>
+        </category>
+        <category name="Logic & Data" colour="#995ba5">
+            <block type="pet_status_check"></block>
+            <block type="math_number"></block>
+        </category>
+    </xml>
+
+    <script src="blocks.js"></script>
+    <script src="generator.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
