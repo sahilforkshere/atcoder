@@ -29,7 +29,7 @@ function runPetCode() {
     
     try {
         if (!code.trim()) {
-            printResult("Error: No workflow found in workspace."); // Friendly message [cite: 12]
+            printResult("Error: No workflow found in workspace."); 
             return;
         }
         eval(code); 
