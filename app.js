@@ -24,17 +24,24 @@ workspace.addChangeListener(() => {
 
 
 function runPetCode() {
+
     outputDiv.innerHTML = ""; 
+    
+    
     const code = javascript.javascriptGenerator.workspaceToCode(workspace);
     
     try {
-        if (!code.trim()) {
-            printResult("Error: No workflow found in workspace."); 
+      
+        if (code.trim() === "") {
+            printResult("Error: Please add some blocks first!"); 
             return;
         }
+        
+        
         eval(code); 
+        
     } catch (e) {
-        printResult("Execution Error: Check your block logic.");
+        printResult("Execution Error: " + e.message); 
     }
 }
 function resetAll() {
